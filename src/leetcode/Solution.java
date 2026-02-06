@@ -1,28 +1,24 @@
-// Write any import statements here
 package leetcode;
 
 class Solution {
-    public static void main(String[] argds) {
-        String abc = "ABA";
-        System.out.println(Solution.getWrongAnswers(3, abc));
+    public static void main(String[] args) {
 
-        String ss = new String();
-        ss.charAt(1);
+        System.out.println(Solution.getWrongAnswers(3, "ABA"));
+
     }
 
     public static String getWrongAnswers(int N, String C) {
         // Write your code here
         char[] answers = C.toCharArray();
-        char[] solution = new char[N];
-        int index = 0;
+        StringBuilder sb = new StringBuilder();
         for (char c : answers) {
             switch (c) {
                 case 'A': {
-                    solution[index++] = 'B';
+                    sb.append('B');
                 }
                     break;
                 case 'B': {
-                    solution[index++] = 'A';
+                    sb.append('A');
                 }
                     break;
                 default: {
@@ -31,8 +27,7 @@ class Solution {
 
             }
         }
-
-        return solution.toString();
+        return sb.toString();
     }
 
 }
