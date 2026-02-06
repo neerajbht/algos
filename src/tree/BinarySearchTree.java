@@ -91,7 +91,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
             return new Node(k, v, 1);
         // case 2 subseeuent nodes
         int cmp = k.compareTo(node.key);
-        if (cmp > 0)
+        if (cmp < 0)
             node.left = put(node.left, k, v);
         else if (cmp > 0)
             node.right = put(node.right, k, v);

@@ -32,6 +32,27 @@ public class MergeX {
      * @param mid
      * @param hi
      */
+
+    private static void merge1(Comparable[] src, Comparable[] dst, int lo, int mid, int hi) {
+
+        // precondition: src[lo .. mid] and src[mid+1 .. hi] are sorted subarrays
+
+        int i = lo, j = mid + 1;
+        for (int k = lo; k <= hi; k++) {
+            if (i > mid)
+                dst[k] = src[j++];
+            else if (j > hi)
+                dst[k] = src[i++];
+            else if (less(src[j], src[i]))
+                dst[k] = src[j++]; // to ensure stability
+            else
+                dst[k] = src[i++];
+        }
+
+        // postcondition: dst[lo .. hi] is sorted subarray
+
+    }
+
     private void merge(Comparable[] src, Comparable[] dst, int lo, int mid, int hi) {
 
         int i = lo, j = mid + 1;
@@ -44,6 +65,24 @@ public class MergeX {
          * i start with lo or 0th position and make sure it does not cross mid
          * j is index used to move second half of the array and has to be less than hi
          * 
+         * private static void merge(Comparable[] src, Comparable[] dst, int lo, int
+         * mid, int hi) {
+         * 
+         * // precondition: src[lo .. mid] and src[mid+1 .. hi] are sorted subarrays
+         * assert isSorted(src, lo, mid);
+         * assert isSorted(src, mid+1, hi);
+         * 
+         * int i = lo, j = mid+1;
+         * for (int k = lo; k <= hi; k++) {
+         * if (i > mid) dst[k] = src[j++];
+         * else if (j > hi) dst[k] = src[i++];
+         * else if (less(src[j], src[i])) dst[k] = src[j++]; // to ensure stability
+         * else dst[k] = src[i++];
+         * }
+         * 
+         * // postcondition: dst[lo .. hi] is sorted subarray
+         * assert isSorted(dst, lo, hi);
+         * }
          * 
          */
 

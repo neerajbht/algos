@@ -1,6 +1,20 @@
 package array;
 
-public class RemoveDuplicateII {
+public class RemoveDuplicate {
+
+    // remvoe all duplicate
+    public int removeDuplicates1(int[] nums) {
+        int insertIndex = 1;
+        for (int i = 1; i < nums.length; i++) {
+
+            if (nums[i - 1] != nums[i]) {
+                nums[insertIndex] = nums[i];
+                insertIndex++;
+            }
+
+        }
+        return insertIndex;
+    }
 
     /**
      * class removes duplicate in sorted array
@@ -42,7 +56,7 @@ public class RemoveDuplicateII {
 
     public static void main(String[] argds) {
         int[] sample = { 1, 1, 1, 2, 2, 2, 3, 4, 5, 5, 5, 6, 6 };
-        System.out.println(RemoveDuplicateII.removeDuplicates(sample));
+        System.out.println(RemoveDuplicate.removeDuplicates(sample));
 
     }
 

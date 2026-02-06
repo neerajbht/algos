@@ -1,4 +1,4 @@
-package leetcode;
+package array.matrix;
 
 import java.util.Arrays;
 

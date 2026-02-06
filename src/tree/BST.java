@@ -3,6 +3,7 @@ package tree;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Binary Search Tree */
 public class BST {
 
     public boolean search(TreeNode root, int target) {
