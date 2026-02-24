@@ -15,14 +15,13 @@ public class Test {
          * Y A H R
          * P I
          */
+        int[] arr = { -2, 4, -5, 4, -5, 9, 4 };
+        System.out.println("sum>>>>>>>>>>>> " + 6 % 6);
 
-        String[] arr = "123.5".split(".");
+        System.out.println("arr len " + arr.length);
+        System.out.println("arr len " + arr[1 % 7]);
 
-        int sum = ((((1 ^ 5) ^ 2) ^ 5) ^ 2) ^ 1;
-
-        System.out.println(sum);
-
-        System.out.println("sum>>>>>>>>>>>> " + 13 % 10);
+        System.out.println("sum>>>>>>>>>>>> " + 13 / 10);
 
         String aa = "PAYPALISHIRING";
         System.out.println("string len " + aa.length());
